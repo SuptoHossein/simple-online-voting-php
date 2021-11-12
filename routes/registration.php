@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if (isset($_SESSION['userdata'])) {
+    header('Location: dashboard.php');
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,7 +93,7 @@
             <button class="w-100 mb-2 btn btn-lg btn-primary" type="submit">
                 Sign in
             </button>
-            <p>Already user? <a class="mt-3" href="../index.html">Sign in</a></p>
+            <p>Already user? <a class="mt-3" href="../index.php">Sign in</a></p>
         </form>
     </main>
 </body>

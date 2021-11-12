@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if (isset($_SESSION['userdata'])) {
+    header('Location: routes/dashboard.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,11 +58,11 @@
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
             <div class="form-floating">
-                <input type="number" class="form-control" id="floatingInput" placeholder="Enter number" />
+                <input type="number" name="mobile" class="form-control" id="floatingInput" placeholder="Enter number" />
                 <label for="floatingInput">Number</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+                <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" />
                 <label for="floatingPassword">Password</label>
             </div>
             <div class="form-group mb-2">
@@ -69,7 +77,7 @@
             <button class="w-100 mb-2 btn btn-lg btn-primary" type="submit">
                 Sign in
             </button>
-            <p>New user? <a class="mt-3" href="routes/registration.html">Registration</a></p>
+            <p>New user? <a class="mt-3" href="routes/registration.php">Registration</a></p>
         </form>
     </main>
 </body>
